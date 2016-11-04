@@ -1,0 +1,47 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CoreTest_1010.Models.Student
+@{
+    ViewData["Title"] = "Detail";
+}
+<dt>
+    @Html.DisplayNameFor(model => model.FirstMidName)
+</dt>
+<dd>
+    @Html.DisplayFor(model => model.FirstMidName)
+</dd>
+<dt>
+    @Html.DisplayNameFor(model => model.LastName)
+</dt>
+<dd>
+    @Html.DisplayFor(model => model.LastName)
+</dd>
+<dt>
+    @Html.DisplayNameFor(model => model.EnrollmentDate)
+</dt>
+<dd>
+    @Html.DisplayFor(model => model.EnrollmentDate)
+</dd>
+<dt>
+    @Html.DisplayNameFor(model => model.Enrollments)
+</dt>
+<dd>
+    <table class="table">
+        <tr>
+            <th>Course Title</th>
+            <th>Grade</th>
+        </tr>
+        @foreach (var item in Model.Enrollments)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Course.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade)
+                </td>
+            </tr>
+        }
+    </table>
+</dd>

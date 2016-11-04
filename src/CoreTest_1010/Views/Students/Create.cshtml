@@ -1,0 +1,31 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CoreTest_1010.Models.Student
+@{
+}
+<form action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="EnrollmentDate" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="EnrollmentDate" class="form-control" />
+            <span asp-validation-for="EnrollmentDate" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="FirstMidName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="FirstMidName" class="form-control" />
+            <span asp-validation-for="FirstMidName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="LastName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="LastName" class="form-control" />
+            <span asp-validation-for="LastName" class="text-danger"></span>
+        </div>
+    </div>
+    <input type="submit" value="Add User" />
+</form>
